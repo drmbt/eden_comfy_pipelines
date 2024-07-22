@@ -929,6 +929,7 @@ class ConvertToGrayscale:
             raise ValueError(f"Input image must have 1 or 3 channels, but got {c} channels. Image shape = {image.shape}")
         return (image,)
 
+
 class AspectPadImageForOutpainting:
     """
     A node to calculate args for default comfy node 'Pad Image For Outpainting'
@@ -958,12 +959,13 @@ class AspectPadImageForOutpainting:
         return {
             "required": {
                 "image": ("IMAGE",),
-                "aspect_ratio": (list(s.ASPECT_RATIO_MAP.keys()), {"default": "SD1.5 - 1:1 square 512x512"}),
+                "aspect_ratio": (list(s.ASPECT_RATIO_MAP.keys()), {"default": "SDXL_16-9_landscape_1344x768"}),
                 "justification": (["top-left", "center", "bottom-right"], {"default": "center"}),
             }
         }
 
     RETURN_TYPES = ("IMAGE", "INT", "INT", "INT", "INT")
+    RETURN_NAMES = ("IMAGE","LEFT","TOP","RIGHT","BOTTOM",)
     FUNCTION = "fit_and_calculate_padding"
     CATEGORY = "Eden 🌱/Image"
 

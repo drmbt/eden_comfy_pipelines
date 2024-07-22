@@ -51,6 +51,6 @@ NODE_CLASS_MAPPINGS = {
     "WidthHeightPicker": WidthHeightPicker,
     "DepthSlicer": DepthSlicer,
     "ParallaxZoom": ParallaxZoom,
-    "AspectPadImageForOutpainting": AspectPadImageForOutpainting
+    "Aspect Pad Image For Outpainting": AspectPadImageForOutpainting
 }
 
